@@ -101,17 +101,17 @@ checkButton.addEventListener("click",(e)=>{
     if (arrayOfRows[0].classList.contains("active") && arrayOfRows.length <= 8 ) {
         for (let i = 0; i < 6; i++) {
             let regex = new RegExp(arrayOfInputs[0][i].value);
-            if (arrayOfInputs[0][i].value=="") {
+            if (arrayOfInputs[0][i].value =="") {
                 arrayOfInputs[0][i].style.background = "#0000006e";
             }
-            if (arrayOfInputs[0][i].value !== word[i] && !regex.test(word)) {
+            if (arrayOfInputs[0][i].value.toLowerCase() !== word[i] && !regex.test(word)) {
                 arrayOfInputs[0][i].style.background = "#0000006e";
             }
-            if (arrayOfInputs[0][i].value !== word[i] && regex.test(word) && arrayOfInputs[0][i].value !== "") {
+            if (arrayOfInputs[0][i].value.toLowerCase() !== word[i] && regex.test(word) && arrayOfInputs[0][i].value !== "") {
                 arrayOfInputs[0][i].style.background = "#0096887a";
                 console.log('done');
             }
-            if (arrayOfInputs[0][i].value === word[i]) {
+            if (arrayOfInputs[0][i].value.toLowerCase() === word[i]) {
                 arrayOfInputs[0][i].style.background = "#f57c00b0";
             }
         }
